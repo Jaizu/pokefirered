@@ -35,6 +35,7 @@
 #include "constants/easy_chat.h"
 #include "constants/trainer_card.h"
 #include "constants/help_system.h"
+#include "constants/sliding_puzzles.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.set FALSE, 0
@@ -1120,7 +1121,7 @@ EventScript_HandOverItem:: @ 81A74F2
 	return
 
 	.include "data/scripts/pokemon_league.inc"
-	.include "data/scripts/movement.inc"	
+	.include "data/scripts/movement.inc"
 	.include "data/scripts/flavor_text.inc"
 	.include "data/scripts/questionnaire.inc"
 
