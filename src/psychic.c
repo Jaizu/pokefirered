@@ -887,7 +887,7 @@ void AnimTask_ExtrasensoryDistortion(u8 taskId)
     u8 yOffset;
     struct ScanlineEffectParams scanlineParams;
     struct Task *task = &gTasks[taskId];
-    
+
     yOffset = GetBattlerYCoordWithElevation(gBattleAnimTarget);
     task->data[14] = yOffset - 32;
     switch (gBattleAnimArgs[0])
@@ -974,7 +974,7 @@ void AnimTask_TransparentCloneGrowAndShrink(u8 taskId)
     s16 spriteId;
     s16 matrixNum;
     struct Task *task = &gTasks[taskId];
-    
+
     matrixNum = AllocOamMatrix();
     if (matrixNum == 0xFF)
     {

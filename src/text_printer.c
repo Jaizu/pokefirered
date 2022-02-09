@@ -237,7 +237,7 @@ void CopyGlyphToWindow(struct TextPrinter *textPrinter)
 {
     int glyphWidth, glyphHeight;
     u8 sizeType;
-    
+
     if (gWindows[textPrinter->printerTemplate.windowId].window.width * 8 - textPrinter->printerTemplate.currentX < gGlyphInfo.width)
         glyphWidth = gWindows[textPrinter->printerTemplate.windowId].window.width * 8 - textPrinter->printerTemplate.currentX;
     else
@@ -252,7 +252,7 @@ void CopyGlyphToWindow(struct TextPrinter *textPrinter)
         sizeType |= 1;
     if (glyphHeight > 8)
         sizeType |= 2;
-    
+
     switch (sizeType)
     {
         case 0: // ≤ 8x8
@@ -280,7 +280,7 @@ void sub_8003614(void * tileData, u16 currentX, u16 currentY, u16 width, u16 hei
     int r0, r1;
     u8 r2;
     u16 r3;
-    
+
     if (width - currentX < gGlyphInfo.width)
         r0 = width - currentX;
     else
@@ -289,14 +289,14 @@ void sub_8003614(void * tileData, u16 currentX, u16 currentY, u16 width, u16 hei
         r1 = height - currentY;
     else
         r1 = gGlyphInfo.height;
-    
+
     r2 = 0;
     r3  = (width + (width & 7)) >> 3;
     if (r0 > 8)
         r2 |= 1;
     if (r1 > 8)
         r2 |= 2;
-    
+
     switch (r2)
     {
         case 0:

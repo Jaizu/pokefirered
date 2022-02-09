@@ -1996,7 +1996,7 @@ static void Task_FightScene4_GengarAttack(u8 taskId)
 static void FightScene4_CreateGengarSwipeSprites(void)
 {
     u8 spriteId;
-    
+
     spriteId = CreateSprite(&sSpriteTemplate_GengarSwipe, 132,  78, 6);
     spriteId = CreateSprite(&sSpriteTemplate_GengarSwipe, 132, 118, 6);
     if (spriteId != MAX_SPRITES)
@@ -2478,7 +2478,7 @@ static void SpriteCB_NidorinoAnim_LaunchSelfAtGengar(struct Sprite * sprite)
 static void LoadFightSceneSpriteTilesAndPals(void)
 {
     int i;
-    
+
     for (i = 0; i < NELEMS(sFightSceneSpriteSheets); i++)
     {
         LoadCompressedSpriteSheet(&sFightSceneSpriteSheets[i]);

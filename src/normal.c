@@ -301,7 +301,7 @@ static void AnimConfusionDuckStep(struct Sprite *sprite)
 static void AnimSimplePaletteBlend(struct Sprite *sprite)
 {
     u32 selectedPalettes = UnpackSelectedBattleAnimPalettes(gBattleAnimArgs[0]);
-    
+
     BeginNormalPaletteFade(selectedPalettes, gBattleAnimArgs[1], gBattleAnimArgs[2], gBattleAnimArgs[3], gBattleAnimArgs[4]);
     sprite->invisible = TRUE;
     sprite->callback = AnimSimplePaletteBlendStep;
@@ -422,7 +422,7 @@ void AnimTask_CurseBlendEffect(u8 taskId)
 static void sub_80B9C2C(u8 taskId, u8 initialBlendAmount, u8 targetBlendAmount)
 {
     u32 selectedPalettes = UnpackSelectedBattleAnimPalettes(gTasks[taskId].data[0]);
-    
+
     BeginNormalPaletteFade(selectedPalettes,
                            gTasks[taskId].data[1],
                            initialBlendAmount,
@@ -487,7 +487,7 @@ void AnimTask_BlendColorCycleExclude(u8 taskId)
 static void sub_80B9DA0(u8 taskId, u8 initialBlendAmount, u8 targetBlendAmount)
 {
     u32 selectedPalettes = ((u16)gTasks[taskId].data[9] << 16) | (u16)gTasks[taskId].data[10];
-    
+
     BeginNormalPaletteFade(selectedPalettes,
                            gTasks[taskId].data[1],
                            initialBlendAmount,
@@ -545,7 +545,7 @@ void AnimTask_BlendColorCycleByTag(u8 taskId)
 static void sub_80B9EA8(u8 taskId, u8 initialBlendAmount, u8 targetBlendAmount)
 {
     u8 paletteIndex = IndexOfSpritePaletteTag(gTasks[taskId].data[0]);
-    
+
     BeginNormalPaletteFade(1 << (paletteIndex + 16),
                            gTasks[taskId].data[1],
                            initialBlendAmount,

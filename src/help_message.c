@@ -57,7 +57,7 @@ void sub_8112F18(u8 windowId)
 
     width = (u8)GetWindowAttribute(windowId, WINDOW_WIDTH);
     height = (u8)GetWindowAttribute(windowId, WINDOW_HEIGHT);
-    
+
     buffer = (u8 *)Alloc(32 * width * height);
 
     if (buffer != NULL)

@@ -80,7 +80,7 @@ static const struct WindowTemplate sWindowTemplate[] = {
         .height = 2,
         .paletteNum = 15,
         .baseBlock = 0x001
-    }, 
+    },
     [MAIN_MENU_WINDOW_CONTINUE] = {
         .bg = 0,
         .tilemapLeft = 3,
@@ -89,7 +89,7 @@ static const struct WindowTemplate sWindowTemplate[] = {
         .height = 10,
         .paletteNum = 15,
         .baseBlock = 0x001
-    }, 
+    },
     [MAIN_MENU_WINDOW_NEWGAME] = {
         .bg = 0,
         .tilemapLeft = 3,
@@ -98,7 +98,7 @@ static const struct WindowTemplate sWindowTemplate[] = {
         .height = 2,
         .paletteNum = 15,
         .baseBlock = 0x0f1
-    }, 
+    },
     [MAIN_MENU_WINDOW_MYSTERYGIFT] = {
         .bg = 0,
         .tilemapLeft = 3,
@@ -107,7 +107,7 @@ static const struct WindowTemplate sWindowTemplate[] = {
         .height = 2,
         .paletteNum = 15,
         .baseBlock = 0x121
-    }, 
+    },
     [MAIN_MENU_WINDOW_ERROR] = {
         .bg = 0,
         .tilemapLeft = 3,
@@ -116,7 +116,7 @@ static const struct WindowTemplate sWindowTemplate[] = {
         .height = 4,
         .paletteNum = 15,
         .baseBlock = 0x001
-    }, 
+    },
     [MAIN_MENU_WINDOW_COUNT] = DUMMY_WIN_TEMPLATE
 };
 
@@ -691,78 +691,78 @@ static void SetStdFrame0OnBg(u8 bgId)
 static void MainMenu_DrawWindow(const struct WindowTemplate * windowTemplate)
 {
     FillBgTilemapBufferRect(
-        windowTemplate->bg, 
-        0x1B1, 
-        windowTemplate->tilemapLeft - 1, 
+        windowTemplate->bg,
+        0x1B1,
+        windowTemplate->tilemapLeft - 1,
         windowTemplate->tilemapTop - 1,
         1,
         1,
         2
     );
     FillBgTilemapBufferRect(
-        windowTemplate->bg, 
-        0x1B2, 
-        windowTemplate->tilemapLeft, 
-        windowTemplate->tilemapTop - 1, 
-        windowTemplate->width, 
-        windowTemplate->height, 
+        windowTemplate->bg,
+        0x1B2,
+        windowTemplate->tilemapLeft,
+        windowTemplate->tilemapTop - 1,
+        windowTemplate->width,
+        windowTemplate->height,
         2
     );
     FillBgTilemapBufferRect(
-        windowTemplate->bg, 
-        0x1B3, 
-        windowTemplate->tilemapLeft + 
-        windowTemplate->width, 
+        windowTemplate->bg,
+        0x1B3,
+        windowTemplate->tilemapLeft +
+        windowTemplate->width,
         windowTemplate->tilemapTop - 1,
         1,
         1,
         2
     );
     FillBgTilemapBufferRect(
-        windowTemplate->bg, 
-        0x1B4, 
-        windowTemplate->tilemapLeft - 1, 
+        windowTemplate->bg,
+        0x1B4,
+        windowTemplate->tilemapLeft - 1,
         windowTemplate->tilemapTop,
-        1, 
+        1,
         windowTemplate->height,
         2
     );
     FillBgTilemapBufferRect(
-        windowTemplate->bg, 
-        0x1B6, 
-        windowTemplate->tilemapLeft + 
-        windowTemplate->width, 
+        windowTemplate->bg,
+        0x1B6,
+        windowTemplate->tilemapLeft +
+        windowTemplate->width,
         windowTemplate->tilemapTop,
-        1, 
+        1,
         windowTemplate->height,
         2
     );
     FillBgTilemapBufferRect(
-        windowTemplate->bg, 
-        0x1B7, 
-        windowTemplate->tilemapLeft - 1, 
-        windowTemplate->tilemapTop + 
+        windowTemplate->bg,
+        0x1B7,
+        windowTemplate->tilemapLeft - 1,
+        windowTemplate->tilemapTop +
         windowTemplate->height,
         1,
         1,
         2
     );
     FillBgTilemapBufferRect(
-        windowTemplate->bg, 
-        0x1B8, 
-        windowTemplate->tilemapLeft, 
-        windowTemplate->tilemapTop + 
-        windowTemplate->height, 
+        windowTemplate->bg,
+        0x1B8,
+        windowTemplate->tilemapLeft,
+        windowTemplate->tilemapTop +
+        windowTemplate->height,
         windowTemplate->width,
         1,
         2
     );
     FillBgTilemapBufferRect(
-        windowTemplate->bg, 
-        0x1B9, 
-        windowTemplate->tilemapLeft + 
-        windowTemplate->width, 
-        windowTemplate->tilemapTop + 
+        windowTemplate->bg,
+        0x1B9,
+        windowTemplate->tilemapLeft +
+        windowTemplate->width,
+        windowTemplate->tilemapTop +
         windowTemplate->height,
         1,
         1,
@@ -774,13 +774,13 @@ static void MainMenu_DrawWindow(const struct WindowTemplate * windowTemplate)
 static void MainMenu_EraseWindow(const struct WindowTemplate * windowTemplate)
 {
     FillBgTilemapBufferRect(
-        windowTemplate->bg, 
-        0x000, 
-        windowTemplate->tilemapLeft - 1, 
-        windowTemplate->tilemapTop - 1,  
-        windowTemplate->tilemapLeft + 
-        windowTemplate->width + 1, 
-        windowTemplate->tilemapTop + 
+        windowTemplate->bg,
+        0x000,
+        windowTemplate->tilemapLeft - 1,
+        windowTemplate->tilemapTop - 1,
+        windowTemplate->tilemapLeft +
+        windowTemplate->width + 1,
+        windowTemplate->tilemapTop +
         windowTemplate->height + 1,
         2
     );

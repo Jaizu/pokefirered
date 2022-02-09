@@ -94,7 +94,7 @@ void MoveSaveBlocks_ResetHeap(void)
     gMain.vblankCallback = NULL;
     gMain.hblankCallback = NULL;
     gMain.vblankCounter1 = NULL;
-    
+
     saveBlock2Copy = (struct SaveBlock2 *)(gHeap);
     saveBlock1Copy = (struct SaveBlock1 *)(gHeap + sizeof(struct SaveBlock2));
     pokemonStorageCopy = (struct PokemonStorage *)(gHeap + sizeof(struct SaveBlock2) + sizeof(struct SaveBlock1));

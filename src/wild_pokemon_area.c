@@ -88,12 +88,12 @@ static const u16 sDexAreas_Sevii1[][2] = {
 	{ MAPSEC_KINDLE_ROAD,    55 },
 	{ MAPSEC_TREASURE_BEACH, 56 },
 	{ MAPSEC_ONE_ISLAND,     48 },
-	{ MAPSEC_MT_EMBER,       72 }    
+	{ MAPSEC_MT_EMBER,       72 }
 };
 
 static const u16 sDexAreas_Sevii2[][2] = {
 	{ MAPSEC_CAPE_BRINK, 57 },
-	{ MAPSEC_TWO_ISLAND, 49 }    
+	{ MAPSEC_TWO_ISLAND, 49 }
 };
 
 static const u16 sDexAreas_Sevii3[][2] = {
@@ -101,12 +101,12 @@ static const u16 sDexAreas_Sevii3[][2] = {
 	{ MAPSEC_THREE_ISLE_PORT, 59 },
 	{ MAPSEC_THREE_ISLAND,    50 },
 	{ MAPSEC_BERRY_FOREST,    73 },
-	{ MAPSEC_THREE_ISLE_PATH, 59 }    
+	{ MAPSEC_THREE_ISLE_PATH, 59 }
 };
 
 static const u16 sDexAreas_Sevii4[][2] = {
 	{ MAPSEC_FOUR_ISLAND,  51 },
-	{ MAPSEC_ICEFALL_CAVE, 74 }    
+	{ MAPSEC_ICEFALL_CAVE, 74 }
 };
 
 static const u16 sDexAreas_Sevii5[][2] = {
@@ -116,7 +116,7 @@ static const u16 sDexAreas_Sevii5[][2] = {
 	{ MAPSEC_MEMORIAL_PILLAR,  63 },
 	{ MAPSEC_FIVE_ISLAND,      52 },
 	{ MAPSEC_ROCKET_WAREHOUSE, 62 },
-	{ MAPSEC_LOST_CAVE,        75 }    
+	{ MAPSEC_LOST_CAVE,        75 }
 };
 
 static const u16 sDexAreas_Sevii6[][2] = {
@@ -126,7 +126,7 @@ static const u16 sDexAreas_Sevii6[][2] = {
 	{ MAPSEC_RUIN_VALLEY,    67 },
 	{ MAPSEC_DOTTED_HOLE,    78 },
 	{ MAPSEC_PATTERN_BUSH,   77 },
-	{ MAPSEC_ALTERING_CAVE,  76 }    
+	{ MAPSEC_ALTERING_CAVE,  76 }
 };
 
 static const u16 sDexAreas_Sevii7[][2] = {
@@ -140,7 +140,7 @@ static const u16 sDexAreas_Sevii7[][2] = {
 	{ MAPSEC_DILFORD_CHAMBER, 79 },
 	{ MAPSEC_SCUFIB_CHAMBER,  79 },
 	{ MAPSEC_RIXY_CHAMBER,    79 },
-	{ MAPSEC_VIAPOIS_CHAMBER, 79 }    
+	{ MAPSEC_VIAPOIS_CHAMBER, 79 }
 };
 
 static const struct SeviiDexArea sSeviiDexAreas[] = {

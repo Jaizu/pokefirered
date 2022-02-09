@@ -633,7 +633,7 @@ static void AnimFireRing(struct Sprite *sprite)
 }
 
 static void AnimFireRing_Step1(struct Sprite *sprite)
-{   
+{
     UpdateFireRingCircleOffset(sprite);
 
     if (++sprite->data[0] == 0x12)
@@ -686,7 +686,7 @@ static void UpdateFireRingCircleOffset(struct Sprite *sprite)
 // arg 1: initial y pixel offset
 // arg 2: duration
 // arg 3: x delta
-// arg 4: y delta 
+// arg 4: y delta
 // AnimFireCross(struct Sprite *sprite)
 static void AnimFireCross(struct Sprite *sprite)
 {

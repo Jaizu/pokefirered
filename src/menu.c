@@ -155,10 +155,10 @@ static void WindowFunc_ClearStdWindowAndFrameToTransparent(u8 bg, u8 tilemapLeft
 
 /*
    The following functions are used for handling top bar window
-   in hall of fame screen and story mode screen before oak intro. 
+   in hall of fame screen and story mode screen before oak intro.
    However, you can still designate a yPos value to place that bar
    as well as the bar width.
-   The xPos is simply computed according to width (always right aligned). 
+   The xPos is simply computed according to width (always right aligned).
 */
 u8 CreateTopBarWindowLoadPalette(u8 bg, u8 width, u8 yPos, u8 palette, u16 baseTile)
 {
@@ -638,7 +638,7 @@ static void MultichoiceGrid_RedrawCursor(u8 oldCursorPos, u8 newCursorPos)
     u8 cursorHeight = GetMenuCursorDimensionByFont(sMenu.fontId, 1);
     u8 xPos = (oldCursorPos % sMenu.columns) * sMenu.optionWidth + sMenu.left;
     u8 yPos = (oldCursorPos / sMenu.columns) * sMenu.optionHeight + sMenu.top;
-    
+
     FillWindowPixelRect(sMenu.windowId, PIXEL_FILL(1), xPos, yPos, cursorWidth, cursorHeight);
     xPos = (newCursorPos % sMenu.columns) * sMenu.optionWidth + sMenu.left;
     yPos = (newCursorPos / sMenu.columns) * sMenu.optionHeight + sMenu.top;

@@ -307,7 +307,7 @@ static void CreateHealthboxSprite(u8 battler)
                 SetHealthboxSpriteInvisible(healthboxSpriteId);
         }
         else if (!(gBattleTypeFlags & BATTLE_TYPE_SAFARI) && GetMonData(&gPlayerParty[gBattlerPartyIndexes[battler]], MON_DATA_HP) == 0)
-        {    
+        {
             SetHealthboxSpriteInvisible(healthboxSpriteId);
         }
     }

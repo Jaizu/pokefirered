@@ -503,7 +503,7 @@ void TintPlttBuffer(u32 selectedPalettes, s8 r, s8 g, s8 b)
             for (i = 0; i < 16; ++i)
             {
                 struct PlttData *data = (struct PlttData *)&gPlttBufferFaded[paletteOffset + i];
-                
+
                 data->r += r;
                 data->g += g;
                 data->b += b;

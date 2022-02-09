@@ -1235,7 +1235,7 @@ void UpdatePickStateFromSpecialVar8005(void)
     {
         if (gSpecialVar_0x8005 == FCPICKSTATE_NO_DRAW)
             return;
-        if (   gSpecialVar_0x8005 == FCPICKSTATE_SILHOUETTE 
+        if (   gSpecialVar_0x8005 == FCPICKSTATE_SILHOUETTE
             && gSaveBlock1Ptr->fameChecker[gSpecialVar_0x8004].pickState == FCPICKSTATE_COLORED
            )
             return;

@@ -181,7 +181,7 @@ static const u16 sTrainerCardStickerPal4[] = INCBIN_U16("graphics/trainer_card/s
 static const u32 sHoennTrainerCardBadges_Gfx[] = INCBIN_U32("graphics/trainer_card/em_badges.4bpp.lz");
 static const u32 sKantoTrainerCardBadges_Gfx[] = INCBIN_U32("graphics/trainer_card/badges.4bpp.lz");
 
-static const struct BgTemplate sTrainerCardBgTemplates[4] = 
+static const struct BgTemplate sTrainerCardBgTemplates[4] =
 {
     {
         .bg = 0,
@@ -221,7 +221,7 @@ static const struct BgTemplate sTrainerCardBgTemplates[4] =
     }
 };
 
-static const struct WindowTemplate sTrainerCardWindowTemplates[4] =    
+static const struct WindowTemplate sTrainerCardWindowTemplates[4] =
 {
     {
         .bg = 1,
@@ -276,61 +276,61 @@ static const u8 sTrainerCardStatColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_R
 static const u8 sTimeColonInvisibleTextColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_TRANSPARENT, TEXT_COLOR_TRANSPARENT};
 static const u8 sTrainerCardFontIds[] = {0, 2, 0};
 
-static const u8 sTrainerPicOffsets[2][GENDER_COUNT][2] = 
+static const u8 sTrainerPicOffsets[2][GENDER_COUNT][2] =
 {
     // Kanto
     {
-        [MALE]   = {13, 4}, 
+        [MALE]   = {13, 4},
         [FEMALE] = {13, 4}
     },
     // Hoenn
     {
-        [MALE]   = {1, 0}, 
+        [MALE]   = {1, 0},
         [FEMALE] = {1, 0}
     }
 };
 
-static const u8 sTrainerPicFacilityClasses[][2] = 
+static const u8 sTrainerPicFacilityClasses[][2] =
 {
-    [CARD_TYPE_FRLG] = 
+    [CARD_TYPE_FRLG] =
     {
-        [MALE]   = FACILITY_CLASS_RED, 
+        [MALE]   = FACILITY_CLASS_RED,
         [FEMALE] = FACILITY_CLASS_LEAF
     },
-    [CARD_TYPE_RSE] = 
+    [CARD_TYPE_RSE] =
     {
-        [MALE]   = FACILITY_CLASS_BRENDAN, 
+        [MALE]   = FACILITY_CLASS_BRENDAN,
         [FEMALE] = FACILITY_CLASS_MAY
     },
 };
 
-static const u8 sLinkTrainerPicFacilityClasses[GENDER_COUNT][NUM_LINK_TRAINER_CARD_CLASSES] = 
+static const u8 sLinkTrainerPicFacilityClasses[GENDER_COUNT][NUM_LINK_TRAINER_CARD_CLASSES] =
 {
-    [MALE] = 
+    [MALE] =
     {
-        FACILITY_CLASS_COOLTRAINER_M, 
-        FACILITY_CLASS_BLACK_BELT, 
-        FACILITY_CLASS_CAMPER, 
-        FACILITY_CLASS_YOUNGSTER, 
-        FACILITY_CLASS_PSYCHIC_M, 
-        FACILITY_CLASS_BUG_CATCHER, 
-        FACILITY_CLASS_TAMER, 
+        FACILITY_CLASS_COOLTRAINER_M,
+        FACILITY_CLASS_BLACK_BELT,
+        FACILITY_CLASS_CAMPER,
+        FACILITY_CLASS_YOUNGSTER,
+        FACILITY_CLASS_PSYCHIC_M,
+        FACILITY_CLASS_BUG_CATCHER,
+        FACILITY_CLASS_TAMER,
         FACILITY_CLASS_JUGGLER
     },
-    [FEMALE] = 
+    [FEMALE] =
     {
         FACILITY_CLASS_COOLTRAINER_F,
-        FACILITY_CLASS_CHANNELER, 
-        FACILITY_CLASS_PICNICKER, 
-        FACILITY_CLASS_LASS, 
-        FACILITY_CLASS_RS_PSYCHIC_F, 
-        FACILITY_CLASS_BATTLE_GIRL, 
-        FACILITY_CLASS_RS_PKMN_BREEDER_F, 
+        FACILITY_CLASS_CHANNELER,
+        FACILITY_CLASS_PICNICKER,
+        FACILITY_CLASS_LASS,
+        FACILITY_CLASS_RS_PSYCHIC_F,
+        FACILITY_CLASS_BATTLE_GIRL,
+        FACILITY_CLASS_RS_PKMN_BREEDER_F,
         FACILITY_CLASS_BEAUTY
     }
 };
 
-static bool8 (*const sTrainerCardFlipTasks[])(struct Task *) = 
+static bool8 (*const sTrainerCardFlipTasks[])(struct Task *) =
 {
     Task_BeginCardFlip,
     Task_AnimateCardFlipDown,
@@ -360,7 +360,7 @@ static const u8 sPokemonIconXOffsets[] = {0, 4, 8, 12, 16, 20};
 static const u8 sStickerPalSlots[] = {11, 12, 13, 14};
 static const u8 sStarYOffsets[] = {7, 6, 0, 0};
 
-static const struct TrainerCard sLinkPlayerTrainerCardTemplate1 = 
+static const struct TrainerCard sLinkPlayerTrainerCardTemplate1 =
 {
     .rse = {
         .gender = MALE,
@@ -400,7 +400,7 @@ static const struct TrainerCard sLinkPlayerTrainerCardTemplate1 =
     .monSpecies = {SPECIES_CHARIZARD, SPECIES_DIGLETT, SPECIES_NIDORINA, SPECIES_FEAROW, SPECIES_PARAS, SPECIES_SLOWBRO}
 };
 
-static const struct TrainerCard sLinkPlayerTrainerCardTemplate2 = 
+static const struct TrainerCard sLinkPlayerTrainerCardTemplate2 =
 {
     .rse = {
         .gender = FEMALE,
@@ -1161,7 +1161,7 @@ static void PrintMoneyOnCard(void)
         x = 118 - 6 * StringLength(buffer);
         AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], 16, 57, sTrainerCardTextColors, TEXT_SPEED_FF, gText_TrainerCardMoney);
         AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], x, 57, sTrainerCardTextColors, TEXT_SPEED_FF, buffer);
-    }    
+    }
 }
 
 static u16 GetCaughtMonsCount(void)
@@ -1247,7 +1247,7 @@ static void PrintProfilePhraseOnCard(void)
             sTrainerCardTextColors, TEXT_SPEED_FF, sTrainerCardDataPtr->easyChatProfile[2]);
 
         AddTextPrinterParameterized3(1, 2, GetStringWidth(2, sTrainerCardDataPtr->easyChatProfile[2], 0) + 16, sTrainerCardProfilePhraseYPositions[sTrainerCardDataPtr->cardType],
-            sTrainerCardTextColors, TEXT_SPEED_FF, sTrainerCardDataPtr->easyChatProfile[3]);    
+            sTrainerCardTextColors, TEXT_SPEED_FF, sTrainerCardDataPtr->easyChatProfile[3]);
     }
 }
 
@@ -1271,7 +1271,7 @@ static void PrintNameOnCardBack(void)
             sTrainerCardBackNameYPositions[sTrainerCardDataPtr->cardType], sTrainerCardTextColors, TEXT_SPEED_FF, sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_NAME]);
     }
     else
-    {    
+    {
         x = sTrainerCardBackNameXPositions[sTrainerCardDataPtr->cardType] - GetStringWidth(sTrainerCardFontIds[1], sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_NAME], GetFontAttribute(sTrainerCardFontIds[1], FONTATTR_LETTER_SPACING));
 
         AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], x, sTrainerCardBackNameYPositions[sTrainerCardDataPtr->cardType],
@@ -1322,10 +1322,10 @@ static void BufferLinkBattleResults(void)
 }
 
 static void PrintLinkBattleResultsOnCard(void)
-{    
+{
     if (sTrainerCardDataPtr->hasLinkResults)
     {
-        AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], sTrainerCardHofDebutXPositions[sTrainerCardDataPtr->cardType], 51, 
+        AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], sTrainerCardHofDebutXPositions[sTrainerCardDataPtr->cardType], 51,
             sTrainerCardTextColors, TEXT_SPEED_FF, sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_LINK_RECORD]);
         AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], 130, 51, sTrainerCardTextColors, TEXT_SPEED_FF, sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_WIN_LOSS]);
         AddTextPrinterParameterized3(1, sTrainerCardFontIds[1], 144, 51, sTrainerCardStatColors, TEXT_SPEED_FF, sTrainerCardDataPtr->strings[TRAINER_CARD_STRING_LINK_WINS]);

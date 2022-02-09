@@ -852,7 +852,7 @@ static s32 RollCredits(void)
         {
             sCreditsMgr->timer--;
             return 0;
-            
+
         }
         sCreditsMgr->timer = 360;
         AddTextPrinterParameterized4(sCreditsMgr->windowId, 1, 0x08, 0x29, 1, 2, sTextColor_Header, 0, TITLE_TEXT);

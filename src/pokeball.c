@@ -325,7 +325,7 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
 u8 DoPokeballSendOutAnimation(s16 pan, u8 kindOfThrow)
 {
     u8 taskId;
-    
+
     gDoingBattleAnim = TRUE;
     gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].ballAnimActive = TRUE;
     taskId = CreateTask(Task_DoPokeballSendOutAnim, 5);
@@ -361,12 +361,12 @@ static void Task_DoPokeballSendOutAnim(u8 taskId)
 
     ballId = ItemIdToBallId(itemId);
     LoadBallGfx(ballId);
-    
+
     if (gBattleTypeFlags & BATTLE_TYPE_LINK)
         gender = gLinkPlayers[GetBattlerMultiplayerId(battlerId)].gender;
     else
         gender = gSaveBlock2Ptr->playerGender;
-    
+
     ballSpriteId = CreateSprite(&gBallSpriteTemplates[ballId], 32, 80, 29);
     gSprites[ballSpriteId].data[0] = 0x80;
     gSprites[ballSpriteId].data[1] = 0;
@@ -386,7 +386,7 @@ static void Task_DoPokeballSendOutAnim(u8 taskId)
             x = 48;
             y = 70;
         }
-        
+
         gBattlerTarget = battlerId;
         gSprites[ballSpriteId].x = x;
         gSprites[ballSpriteId].y = y;
@@ -478,7 +478,7 @@ static void SpriteCB_BallThrow_ShrinkMon(struct Sprite *sprite)
     sprite->data[5]++;
     if (sprite->data[5] == 11)
         PlaySE(SE_BALL_TRADE);
-    
+
     if (gSprites[gBattlerSpriteIds[sprite->sBattler]].affineAnimEnded)
     {
         StartSpriteAnim(sprite, 2);
@@ -648,7 +648,7 @@ static void SpriteCB_BallThrow_Shake(struct Sprite *sprite)
                 StartSpriteAffineAnim(sprite, 2);
             else
                 StartSpriteAffineAnim(sprite, 1);
-            
+
             PlaySE(SE_BALL);
         }
         break;
@@ -684,7 +684,7 @@ static void Task_PlayCryWhenReleasedFromBall(u8 taskId)
             PlayCry3(species, pan, 0);
         else
             PlayCry3(species, pan, 11);
-        
+
         DestroyTask(taskId);
         break;
     case 2:
@@ -732,7 +732,7 @@ static void Task_PlayCryWhenReleasedFromBall(u8 taskId)
             gTasks[taskId].tCryTaskFrames--;
             break;
         }
-        
+
         if (ShouldPlayNormalPokeCry(mon) == TRUE)
             PlayCry4(species, pan, 0);
         else
@@ -794,7 +794,7 @@ static void SpriteCB_ReleaseMonFromBall(struct Sprite *sprite)
             wantedCryCase = 1;
         else
             wantedCryCase = 2;
-        
+
         taskId = CreateTask(Task_PlayCryWhenReleasedFromBall, 3);
         gTasks[taskId].tCryTaskSpecies = species;
         gTasks[taskId].tCryTaskPan = pan;
@@ -1056,13 +1056,13 @@ static void SpriteCB_ReleasedMonFlyOut(struct Sprite *sprite)
 
     if (sprite->animEnded)
         sprite->invisible = TRUE;
-    
+
     if (gSprites[monSpriteId].affineAnimEnded)
     {
         StartSpriteAffineAnim(&gSprites[monSpriteId], 0);
         r12 = TRUE;
     }
-    
+
     var1 = (sprite->data[5] - sprite->x) * sprite->data[7] / 128 + sprite->x;
     var2 = (sprite->data[6] - sprite->y) * sprite->data[7] / 128 + sprite->y;
     gSprites[monSpriteId].x = var1;
@@ -1083,7 +1083,7 @@ static void SpriteCB_ReleasedMonFlyOut(struct Sprite *sprite)
         gSprites[monSpriteId].y2 = 0;
         r6 = TRUE;
     }
-    
+
     if (sprite->animEnded && r12 && r6)
         DestroySpriteAndFreeResources(sprite);
 }
@@ -1140,7 +1140,7 @@ static void SpriteCB_TradePokeballSendOff(struct Sprite *sprite)
     sprite->data[5]++;
     if (sprite->data[5] == 11)
         PlaySE(SE_BALL_TRADE);
-    
+
     monSpriteId = sprite->data[0];
     if (gSprites[monSpriteId].affineAnimEnded)
     {
@@ -1183,7 +1183,7 @@ void StartHealthboxSlideIn(u8 battlerId)
         healthboxSprite->x2 = -healthboxSprite->x2;
         healthboxSprite->y2 = -healthboxSprite->y2;
     }
-    
+
     gSprites[healthboxSprite->data[5]].callback(&gSprites[healthboxSprite->data[5]]);
     if (GetBattlerPosition(battlerId) == B_POSITION_PLAYER_RIGHT)
         healthboxSprite->callback = SpriteCB_HealthboxSlideInDelayed;
@@ -1241,7 +1241,7 @@ void LoadBallGfx(u8 ballId)
         LoadCompressedSpriteSheetUsingHeap(&gBallSpriteSheets[ballId]);
         LoadCompressedSpritePaletteUsingHeap(&gBallSpritePalettes[ballId]);
     }
-    
+
     switch (ballId)
     {
     case BALL_DIVE:

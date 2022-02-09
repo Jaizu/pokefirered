@@ -333,7 +333,7 @@ void StartSouthernIslandBattle(void)
 void StartLegendaryBattle(void)
 {
     u16 species;
-    
+
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_LEGENDARY_FRLG;

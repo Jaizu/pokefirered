@@ -314,7 +314,7 @@ void InitTilesetAnim_VermilionGym(void)
 static void QueueAnimTiles_CeladonGym_Flowers(u16 timer)
 {
     u16 i = timer % NELEMS(sTilesetAnims_CeladonGym_Flowers);
-    
+
     AppendTilesetAnimToBuffer(sTilesetAnims_CeladonGym_Flowers[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(739)), 4 * TILE_SIZE_4BPP);
 }
 

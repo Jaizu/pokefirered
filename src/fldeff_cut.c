@@ -134,11 +134,11 @@ bool8 SetUpFieldMove_Cut(void)
         gPostMenuFieldCallback = FieldCallback_CutTree;
         return TRUE;
     }
-    
+
     else
     {
         PlayerGetDestCoords(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
-    
+
         for (i = 0; i < CUT_SIDE; i++)
         {
             y = gPlayerFacingPosition.y - 1 + i;
