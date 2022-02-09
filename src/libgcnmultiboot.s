@@ -23,11 +23,11 @@
 	.equiv ROM_HEADER_NINTENDO_LOGO_OFFSET, 0x04
 	.equiv ROM_HEADER_NINTENDO_LOGO_LENGTH, 0x98
 	.equiv ROM_HEADER_NINTENDO_LOGO_END,    0xA0
-	
+
 	.equiv MBPROGRESS_NONE,                 0x00
 	.equiv MBPROGRESS_LOGO_CORRECT,         0x01
 	.equiv MBPROGRESS_READY_TO_BOOT,        0x02
-	
+
 	.equiv GCMB_MAGIC_BOOTKEY_HASHVAL,      0xBB
 	.equiv GCMB_MAGIC_BOOTKEY,              0xBB
 	.equiv GCMB_MAGIC_COUNTER2,             0xCC
@@ -433,7 +433,7 @@ GcMbIntrHandler_ReceiveKeyA: @ 81DCD0C
 	lsrs r1, 1 @ is receive complete?
 	bcc GcMbIntrHandler_Stop @ branch if not
 	ldr r1, [r3, OFFSET_REG_JOY_RECV - 0x120]
-	@ make sure top 8 bits of the received value is the KeyA magic number, stop if KeyA is invalid 
+	@ make sure top 8 bits of the received value is the KeyA magic number, stop if KeyA is invalid
 	lsrs r2, r1, 24
 	cmp r2, GCMB_MAGIC_KEYA
 	bne GcMbIntrHandler_Stop

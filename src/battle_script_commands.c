@@ -745,10 +745,10 @@ static const struct SpriteTemplate sSpriteTemplate_MonIconOnLvlUpBox =
 };
 
 static const u16 sProtectSuccessRates[] =
-{ 
+{
     USHRT_MAX,
-    USHRT_MAX / 2, 
-    USHRT_MAX / 4, 
+    USHRT_MAX / 2,
+    USHRT_MAX / 4,
     USHRT_MAX / 8
 };
 
@@ -890,7 +890,7 @@ static void atk00_attackcanceler(void)
         return;
     }
     gHitMarker &= ~(HITMARKER_x800000);
-    if (!(gHitMarker & HITMARKER_OBEYS) 
+    if (!(gHitMarker & HITMARKER_OBEYS)
      && !(gBattleMons[gBattlerAttacker].status2 & STATUS2_MULTIPLETURNS))
     {
         i = IsMonDisobedient();
@@ -1119,7 +1119,7 @@ static void atk01_accuracycheck(void)
         if ((Random() % 100 + 1) > calc)
         {
             gMoveResultFlags |= MOVE_RESULT_MISSED;
-            if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE 
+            if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE
              && (gBattleMoves[move].target == MOVE_TARGET_BOTH || gBattleMoves[move].target == MOVE_TARGET_FOES_AND_ALLY))
                 gBattleCommunication[6] = 2;
             else
@@ -1721,7 +1721,7 @@ static void atk0B_healthbarupdate(void)
                 s16 healthValue;
                 s32 currDmg = gBattleMoveDamage;
                 s32 maxPossibleDmgValue = 10000; // not present in R/S, ensures that huge damage values don't change sign
-                
+
                 if (currDmg <= maxPossibleDmgValue)
                     healthValue = currDmg;
                 else
@@ -2080,7 +2080,7 @@ static void atk14_printselectionstringfromtable(void)
 u8 GetBattlerTurnOrderNum(u8 battlerId)
 {
     s32 i;
-    
+
     for (i = 0; i < gBattlersCount && gBattlerByTurnOrder[i] != battlerId; ++i);
     return i;
 }
@@ -2110,7 +2110,7 @@ void SetMoveEffect(bool8 primary, u8 certain)
         ++gBattlescriptCurrInstr;
         return;
     }
-    if (gBattleMons[gEffectBattler].ability == ABILITY_SHIELD_DUST 
+    if (gBattleMons[gEffectBattler].ability == ABILITY_SHIELD_DUST
      && !(gHitMarker & HITMARKER_IGNORE_SAFEGUARD)
      && !primary
      && gBattleCommunication[MOVE_EFFECT_BYTE] <= 9)
@@ -3331,7 +3331,7 @@ static void atk24(void)
             {
                 u32 *ptr = &gHitMarker;
                 u32 hitMarkerUnk = 0x10000000;
-                
+
                 ++i;
                 --i;
                 if ((hitMarkerUnk << i) & *ptr && !gSpecialStatuses[i].flag40)
@@ -3341,7 +3341,7 @@ static void atk24(void)
             {
                 u32 *ptr = &gHitMarker;
                 u32 hitMarkerUnk = 0x10000000;
-                
+
                 {
                     u8 match;
 
@@ -4042,7 +4042,7 @@ static void atk49_moveend(void)
         case ATK49_CHOICE_MOVE: // update choice band move
             if (gHitMarker & HITMARKER_OBEYS
              && holdEffectAtk == HOLD_EFFECT_CHOICE_BAND
-             && gChosenMove != MOVE_STRUGGLE 
+             && gChosenMove != MOVE_STRUGGLE
              && (*choicedMoveAtk == 0 || *choicedMoveAtk == 0xFFFF))
             {
                 if (gChosenMove == MOVE_BATON_PASS && !(gMoveResultFlags & MOVE_RESULT_FAILED))
@@ -4065,7 +4065,7 @@ static void atk49_moveend(void)
             for (i = 0; i < gBattlersCount; ++i)
             {
                 u16 *changedItem = &gBattleStruct->changedItems[i];
-                
+
                 if (*changedItem != 0)
                 {
                     gBattleMons[i].item = *changedItem;
@@ -4401,7 +4401,7 @@ static void atk4E_switchinanim(void)
     {
         gActiveBattler = GetBattlerForBattleScript(gBattlescriptCurrInstr[1]);
         if (GetBattlerSide(gActiveBattler) == B_SIDE_OPPONENT
-         && !(gBattleTypeFlags & 
+         && !(gBattleTypeFlags &
               (BATTLE_TYPE_LINK
             | BATTLE_TYPE_LEGENDARY
             | BATTLE_TYPE_OLD_MAN_TUTORIAL
@@ -4943,7 +4943,7 @@ static void atk59_handlelearnnewmove(void)
     const u8 *jumpPtr1 = T1_READ_PTR(gBattlescriptCurrInstr + 1);
     const u8 *jumpPtr2 = T1_READ_PTR(gBattlescriptCurrInstr + 5);
     u16 ret = MonTryLearningNewMove(&gPlayerParty[gBattleStruct->expGetterMonId], gBattlescriptCurrInstr[9]);
-    
+
     while (ret == 0xFFFE)
         ret = MonTryLearningNewMove(&gPlayerParty[gBattleStruct->expGetterMonId], 0);
     if (ret == 0)
@@ -5043,7 +5043,7 @@ static void atk5A_yesnoboxlearnmove(void)
             else
             {
                 u16 moveId = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_MOVE1 + movePosition);
-                
+
                 if (IsHMMove2(moveId))
                 {
                     PrepareStringBattle(STRINGID_HMMOVESCANTBEFORGOTTEN, gActiveBattler);
@@ -5175,28 +5175,28 @@ static void atk5D_getmoneyreward(void)
             case 0:
                 {
                     const struct TrainerMonNoItemDefaultMoves *party1 = gTrainers[gTrainerBattleOpponent_A].party.NoItemDefaultMoves;
-                    
+
                     lastMonLevel = party1[gTrainers[gTrainerBattleOpponent_A].partySize - 1].lvl;
                 }
                 break;
             case F_TRAINER_PARTY_CUSTOM_MOVESET:
                 {
                     const struct TrainerMonNoItemCustomMoves *party2 = gTrainers[gTrainerBattleOpponent_A].party.NoItemCustomMoves;
-                    
+
                     lastMonLevel = party2[gTrainers[gTrainerBattleOpponent_A].partySize - 1].lvl;
                 }
                 break;
             case F_TRAINER_PARTY_HELD_ITEM:
                 {
                     const struct TrainerMonItemDefaultMoves *party3 = gTrainers[gTrainerBattleOpponent_A].party.ItemDefaultMoves;
-                    
+
                     lastMonLevel = party3[gTrainers[gTrainerBattleOpponent_A].partySize - 1].lvl;
                 }
                 break;
             case (F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM):
                 {
                     party4 = gTrainers[gTrainerBattleOpponent_A].party.ItemCustomMoves;
-                    
+
                     lastMonLevel = party4[gTrainers[gTrainerBattleOpponent_A].partySize - 1].lvl;
                 }
                 break;
@@ -5238,7 +5238,7 @@ static void atk5E(void)
          {
             s32 i;
             struct BattlePokemon *bufferPoke = (struct BattlePokemon *) &gBattleBufferB[gActiveBattler][4];
-            
+
             for (i = 0; i < MAX_MON_MOVES; ++i)
             {
                 gBattleMons[gActiveBattler].moves[i] = bufferPoke->moves[i];
@@ -6224,7 +6224,7 @@ static void atk80_manipulatedamage(void)
 static void atk81_trysetrest(void)
 {
     const u8 *failJump = T1_READ_PTR(gBattlescriptCurrInstr + 1);
-    
+
     gActiveBattler = gBattlerTarget = gBattlerAttacker;
     gBattleMoveDamage = gBattleMons[gBattlerTarget].maxHP * (-1);
     if (gBattleMons[gBattlerTarget].hp == gBattleMons[gBattlerTarget].maxHP)
@@ -6607,7 +6607,7 @@ static bool8 TryDoForceSwitchOut(void)
     else
     {
         u16 random = Random() & 0xFF;
-        
+
         if ((u32)((random * (gBattleMons[gBattlerAttacker].level + gBattleMons[gBattlerTarget].level) >> 8) + 1) <= (gBattleMons[gBattlerTarget].level / 4))
         {
             gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
@@ -8545,7 +8545,7 @@ static void atkD9_scaledamagebyhealthratio(void)
     if (gDynamicBasePower == 0)
     {
         u8 power = gBattleMoves[gCurrentMove].power;
-        
+
         gDynamicBasePower = gBattleMons[gBattlerAttacker].hp * power / gBattleMons[gBattlerAttacker].maxHP;
         if (gDynamicBasePower == 0)
             gDynamicBasePower = 1;
@@ -8566,7 +8566,7 @@ static void atkDA_tryswapabilities(void) // skill swap
     else
     {
         u8 abilityAtk = gBattleMons[gBattlerAttacker].ability;
-        
+
         gBattleMons[gBattlerAttacker].ability = gBattleMons[gBattlerTarget].ability;
         gBattleMons[gBattlerTarget].ability = abilityAtk;
 

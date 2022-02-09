@@ -138,7 +138,7 @@ static const struct Subsprite sFlyingSandSubsprites[] =
         .tileOffset = 0,
         .priority = 1,
     },
-    {   
+    {
         .x = 16,
         .y = 0,
         .shape = ST_OAM_H_RECTANGLE,

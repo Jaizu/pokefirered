@@ -56,7 +56,7 @@ static const struct WindowTemplate sWindowTemplates[] = {
         .tilemapTop = 1,
         .width = 25,
         .height = 4,
-        .paletteNum = 15, 
+        .paletteNum = 15,
         .baseBlock = 0x29c},
     {
         .bg = 1,
@@ -64,7 +64,7 @@ static const struct WindowTemplate sWindowTemplates[] = {
         .tilemapTop = 6,
         .width = 28,
         .height = 8,
-        .paletteNum = 15, 
+        .paletteNum = 15,
         .baseBlock = 0x1bc},
     {
         .bg = 1,
@@ -72,7 +72,7 @@ static const struct WindowTemplate sWindowTemplates[] = {
         .tilemapTop = 14,
         .width = 28,
         .height = 5,
-        .paletteNum = 15, 
+        .paletteNum = 15,
         .baseBlock = 0x130}
 };
 

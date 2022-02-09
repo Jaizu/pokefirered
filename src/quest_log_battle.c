@@ -137,7 +137,7 @@ void TrySetQuestLogLinkBattleEvent(void)
             {
                 inUnionRoom = InUnionRoom();
                 eventId = QL_EVENT_LINK_BATTLED_SINGLE;
-                
+
                 if (inUnionRoom == TRUE)
                     eventId = QL_EVENT_LINK_BATTLED_UNION;
             }

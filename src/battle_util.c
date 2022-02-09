@@ -257,7 +257,7 @@ void UpdateSentPokesToOpponentValue(u8 battler)
     else
     {
         s32 i;
-        
+
         for (i = 1; i < gBattlersCount; ++i)
             gSentPokesToOpponent[(i & BIT_FLANK) >> 1] |= gBitTable[gBattlerPartyIndexes[battler]];
     }
@@ -374,7 +374,7 @@ bool8 AreAllMovesUnusable(void)
         gSelectionBattleScripts[gActiveBattler] = BattleScript_NoMovesLeft;
         if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE)
             gBattleBufferB[gActiveBattler][3] = GetBattlerAtPosition((BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler))) | (Random() & 2));
-        else 
+        else
             gBattleBufferB[gActiveBattler][3] = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(gActiveBattler)));
     }
     else
@@ -438,14 +438,14 @@ u8 DoFieldEndTurnEffects(void)
             for (i = 0; i < gBattlersCount - 1; ++i)
             {
                 s32 j;
-                
+
                 for (j = i + 1; j < gBattlersCount; ++j)
                     if (GetWhoStrikesFirst(gBattlerByTurnOrder[i], gBattlerByTurnOrder[j], 0))
                         SwapTurnOrder(i, j);
             }
             {
                 u8 *var = &gBattleStruct->turnCountersTracker;
-                
+
                 ++*var;
                 gBattleStruct->turnSideTracker = 0;
             }
@@ -2143,7 +2143,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u8 ability, u8 special, u16 moveA
                 if (gBattleMons[i].ability == ABILITY_TRACE && (gStatuses3[i] & STATUS3_TRACE))
                 {
                     u8 target2;
-                    
+
                     side = (GetBattlerPosition(i) ^ BIT_SIDE) & BIT_SIDE; // side of the opposing pokemon
                     target1 = GetBattlerAtPosition(side);
                     target2 = GetBattlerAtPosition(side + BIT_FLANK);

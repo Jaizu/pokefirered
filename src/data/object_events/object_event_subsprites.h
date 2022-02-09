@@ -222,11 +222,11 @@ const struct Subsprite gObjectEventSpriteOamTable_32x32_2[] = {
         .priority = 2
     },
     {
-        .x = -16, 
-        .y = 8, 
-        .shape = SPRITE_SHAPE(32x8), 
-        .size = SPRITE_SIZE(32x8), 
-        .tileOffset = 12, 
+        .x = -16,
+        .y = 8,
+        .shape = SPRITE_SHAPE(32x8),
+        .size = SPRITE_SIZE(32x8),
+        .tileOffset = 12,
         .priority = 3
     }
 };

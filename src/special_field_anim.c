@@ -16,52 +16,52 @@ static void Task_DrawTeleporterCable(u8 taskId);
 #define ESCALATOR_STAGES     3
 #define LAST_ESCALATOR_STAGE (ESCALATOR_STAGES - 1)
 
-static const u16 sEscalatorMetatiles_BottomNextRail[ESCALATOR_STAGES] = 
+static const u16 sEscalatorMetatiles_BottomNextRail[ESCALATOR_STAGES] =
 {
-    METATILE_PokemonCenter_Escalator_BottomNextRail_Transition2, 
-    METATILE_PokemonCenter_Escalator_BottomNextRail_Transition1, 
+    METATILE_PokemonCenter_Escalator_BottomNextRail_Transition2,
+    METATILE_PokemonCenter_Escalator_BottomNextRail_Transition1,
     METATILE_PokemonCenter_Escalator_BottomNextRail_Normal
 };
 
-static const u16 sEscalatorMetatiles_BottomRail[ESCALATOR_STAGES] = 
+static const u16 sEscalatorMetatiles_BottomRail[ESCALATOR_STAGES] =
 {
-    METATILE_PokemonCenter_Escalator_BottomRail_Transition2, 
-    METATILE_PokemonCenter_Escalator_BottomRail_Transition1, 
+    METATILE_PokemonCenter_Escalator_BottomRail_Transition2,
+    METATILE_PokemonCenter_Escalator_BottomRail_Transition1,
     METATILE_PokemonCenter_Escalator_BottomRail_Normal
 };
 
-static const u16 sEscalatorMetatiles_BottomNext[ESCALATOR_STAGES] = 
+static const u16 sEscalatorMetatiles_BottomNext[ESCALATOR_STAGES] =
 {
-    METATILE_PokemonCenter_Escalator_BottomNext_Transition2, 
-    METATILE_PokemonCenter_Escalator_BottomNext_Transition1, 
+    METATILE_PokemonCenter_Escalator_BottomNext_Transition2,
+    METATILE_PokemonCenter_Escalator_BottomNext_Transition1,
     METATILE_PokemonCenter_Escalator_BottomNext_Normal
 };
 
-static const u16 sEscalatorMetatiles_Bottom[ESCALATOR_STAGES] = 
+static const u16 sEscalatorMetatiles_Bottom[ESCALATOR_STAGES] =
 {
-    METATILE_PokemonCenter_Escalator_Bottom_Transition2, 
-    METATILE_PokemonCenter_Escalator_Bottom_Transition1, 
+    METATILE_PokemonCenter_Escalator_Bottom_Transition2,
+    METATILE_PokemonCenter_Escalator_Bottom_Transition1,
     METATILE_PokemonCenter_Escalator_Bottom_Normal
 };
 
-static const u16 sEscalatorMetatiles_TopNext[ESCALATOR_STAGES] = 
+static const u16 sEscalatorMetatiles_TopNext[ESCALATOR_STAGES] =
 {
-    METATILE_PokemonCenter_Escalator_TopNext_Normal, 
-    METATILE_PokemonCenter_Escalator_TopNext_Transition1, 
+    METATILE_PokemonCenter_Escalator_TopNext_Normal,
+    METATILE_PokemonCenter_Escalator_TopNext_Transition1,
     METATILE_PokemonCenter_Escalator_TopNext_Transition2
 };
 
-static const u16 sEscalatorMetatiles_Top[ESCALATOR_STAGES] = 
+static const u16 sEscalatorMetatiles_Top[ESCALATOR_STAGES] =
 {
-    METATILE_PokemonCenter_Escalator_Top_Normal, 
-    METATILE_PokemonCenter_Escalator_Top_Transition1, 
+    METATILE_PokemonCenter_Escalator_Top_Normal,
+    METATILE_PokemonCenter_Escalator_Top_Transition1,
     METATILE_PokemonCenter_Escalator_Top_Transition2
 };
 
-static const u16 sEscalatorMetatiles_TopNextRail[ESCALATOR_STAGES] = 
+static const u16 sEscalatorMetatiles_TopNextRail[ESCALATOR_STAGES] =
 {
-    METATILE_PokemonCenter_Escalator_TopNextRail_Normal, 
-    METATILE_PokemonCenter_Escalator_TopNextRail_Transition1, 
+    METATILE_PokemonCenter_Escalator_TopNextRail_Normal,
+    METATILE_PokemonCenter_Escalator_TopNextRail_Transition1,
     METATILE_PokemonCenter_Escalator_TopNextRail_Transition2
 };
 
@@ -76,11 +76,11 @@ static void SetEscalatorMetatile(u8 taskId, const s16 *metatileIds, u16 metatile
 {
     s16 x, y, transitionStage;
     s16 i, j;
-    
+
     x = gTasks[taskId].tPlayerX - 1;
     y = gTasks[taskId].tPlayerY - 1;
     transitionStage = gTasks[taskId].tTransitionStage;
-    
+
     // Check all the escalator sections and only progress the selected one to the next stage
     if (!gTasks[taskId].tGoingUp)
     {
@@ -89,7 +89,7 @@ static void SetEscalatorMetatile(u8 taskId, const s16 *metatileIds, u16 metatile
             for (j = 0; j < 3; j++)
             {
                 s32 id = MapGridGetMetatileIdAt(x + j, y + i);
-                
+
                 if (metatileIds[transitionStage] == (s16)id)
                 {
                     if (transitionStage != LAST_ESCALATOR_STAGE)
@@ -124,7 +124,7 @@ static void Task_DrawEscalator(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
     u16 state;
-    
+
     tDrawingEscalator = TRUE;
 
     // Set tile for each section of the escalator in sequence for current transition stage
@@ -153,7 +153,7 @@ static void Task_DrawEscalator(u8 taskId)
     default:
         break;
     }
-    
+
     tState = (tState + 1) & 7;
     state = tState & 7;
 
@@ -184,7 +184,7 @@ static u8 CreateEscalatorTask(bool16 goingUp)
 void StartEscalator(bool8 goingUp)
 {
     u8 taskId;
-    
+
     taskId = CreateEscalatorTask(goingUp);
     sEscalatorTaskId = taskId;
 }
@@ -195,7 +195,7 @@ void StopEscalator(void)
 }
 
 bool8 IsEscalatorMoving(void)
-{    
+{
     if (gTasks[sEscalatorTaskId].tDrawingEscalator == FALSE)
     {
         if (gTasks[sEscalatorTaskId].tTransitionStage != LAST_ESCALATOR_STAGE)
@@ -224,7 +224,7 @@ void AnimateTeleporterHousing(void)
 {
     u8 taskId;
     s16 *data;
-    
+
     taskId = CreateTask(Task_DrawTeleporterHousing, 0);
     gTasks[taskId].tTimer = 0;
     gTasks[taskId].tState = 0;
@@ -242,13 +242,13 @@ void AnimateTeleporterHousing(void)
     {
         gTasks[taskId].tX -= 1;
         gTasks[taskId].tY -= 5;
-    }    
+    }
 }
 
 static void Task_DrawTeleporterHousing(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
-    
+
     if (tTimer == 0)
     {
         // Alternate the teleporter light / brightness of the teleporter door
@@ -265,16 +265,16 @@ static void Task_DrawTeleporterHousing(u8 taskId)
         CurrentMapDrawMetatileAt(tX, tY);
         CurrentMapDrawMetatileAt(tX, tY + 2);
     }
-    
+
     tTimer++;
     if (tTimer != 16)
         return;
-    
+
     tTimer = 0;
     tState++;
     if (tState != 13)
         return;
-    
+
     MapGridSetMetatileIdAt(tX, tY, METATILE_SeaCottage_Teleporter_Light_Green | METATILE_COLLISION_MASK);
     MapGridSetMetatileIdAt(tX, tY + 2, METATILE_SeaCottage_Teleporter_Door | METATILE_COLLISION_MASK);
     CurrentMapDrawMetatileAt(tX, tY);
@@ -286,7 +286,7 @@ void AnimateTeleporterCable(void)
 {
     u8 taskId;
     s16 *data;
-    
+
     taskId = CreateTask(Task_DrawTeleporterCable, 0);
     gTasks[taskId].tTimer = 0;
     gTasks[taskId].tState = 0;
@@ -299,7 +299,7 @@ void AnimateTeleporterCable(void)
 static void Task_DrawTeleporterCable(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
-    
+
     if (tTimer == 0)
     {
         if (tState != 0)
@@ -316,7 +316,7 @@ static void Task_DrawTeleporterCable(u8 taskId)
                 DestroyTask(taskId);
                 return;
             }
-            
+
             tX--;
         }
 
@@ -326,7 +326,7 @@ static void Task_DrawTeleporterCable(u8 taskId)
         CurrentMapDrawMetatileAt(tX, tY);
         CurrentMapDrawMetatileAt(tX, tY + 1);
     }
-    
+
     tTimer++;
     if (tTimer == 4)
     {

@@ -292,7 +292,7 @@ static void TryShinyAnimAfterMonAnim(void)
 static void CompleteOnHealthbarDone(void)
 {
     s16 hpValue = MoveBattleBar(gActiveBattler, gHealthboxSpriteIds[gActiveBattler], HEALTH_BAR, 0);
-    
+
     SetHealthboxSpriteVisible(gHealthboxSpriteIds[gActiveBattler]);
     if (hpValue != -1)
     {
@@ -1694,9 +1694,9 @@ static void OpponentHandleDrawPartyStatusSummary(void)
                 gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].opponentDrawPartyStatusSummaryDelay = 0;
             }
         }
-        gBattlerStatusSummaryTaskId[gActiveBattler] = CreatePartyStatusSummarySprites(gActiveBattler, 
-                                                                                      (struct HpAndStatus *)&gBattleBufferA[gActiveBattler][4], 
-                                                                                      gBattleBufferA[gActiveBattler][1], 
+        gBattlerStatusSummaryTaskId[gActiveBattler] = CreatePartyStatusSummarySprites(gActiveBattler,
+                                                                                      (struct HpAndStatus *)&gBattleBufferA[gActiveBattler][4],
+                                                                                      gBattleBufferA[gActiveBattler][1],
                                                                                       gBattleBufferA[gActiveBattler][2]);
         gBattleSpritesDataPtr->healthBoxesData[gActiveBattler].partyStatusDelayTimer = 0;
         if (gBattleBufferA[gActiveBattler][2])

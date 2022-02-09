@@ -710,7 +710,7 @@ static void AnimSwirlingSnowball_Step2(struct Sprite *sprite)
 static void AnimSwirlingSnowball_Step3(struct Sprite *sprite)
 {
     s16 tempVar = GetBattlerSide(gBattleAnimAttacker) != B_SIDE_PLAYER ? 20 : -20;
-    
+
     if (sprite->data[5] <= 31)
     {
         sprite->x2 = Sin(sprite->data[0], tempVar) - sprite->data[3];

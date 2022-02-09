@@ -248,9 +248,9 @@ static void QLogCB_Playback(void)
 
     if (sQuestLogCurrentScene.sceneEndMode == 0)
     {
-        if (gQuestLogPlaybackState != 0 
-         || sQuestLogCurrentScene.playbackSubstate == 1 
-         || (sQuestLogCurrentScene.cursor < NELEMS(gUnknown_203AE0C) 
+        if (gQuestLogPlaybackState != 0
+         || sQuestLogCurrentScene.playbackSubstate == 1
+         || (sQuestLogCurrentScene.cursor < NELEMS(gUnknown_203AE0C)
           && gUnknown_203AE0C[sQuestLogCurrentScene.cursor] != NULL))
             QuestLog_PlayCurrentEvent();
         else
@@ -514,7 +514,7 @@ static void QuestLogPlaybackSetObjectEventTemplates(u8 sceneNum)
 {
     struct QuestLog *questLog = &gSaveBlock1Ptr->questLog[sceneNum];
     u16 i;
-    
+
     for (i = 0; i < 64; i++)
     {
         if (questLog->npcData[i].negx)
@@ -535,7 +535,7 @@ static void QuestLogPlaybackSetObjectEventTemplates(u8 sceneNum)
 static void QLPlayback_SetInitialPlayerPosition(u8 sceneNum, bool8 isWarp)
 {
     struct WarpData sp0;
-    
+
     if (!isWarp)
     {
         gSaveBlock1Ptr->location.mapGroup = gSaveBlock1Ptr->questLog[sceneNum].mapGroup;

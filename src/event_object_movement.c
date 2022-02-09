@@ -178,12 +178,12 @@ EWRAM_DATA u16 sCurrentSpecialObjectPaletteTag = 0;
 const u8 gReflectionEffectPaletteMap[16] = {1, 1, 6, 7, 8, 9, 6, 7, 8, 9, 11, 11, 0, 0, 0, 0};
 
 static const struct SpriteTemplate gCameraSpriteTemplate = {
-    .tileTag = 0, 
+    .tileTag = 0,
     .paletteTag = SPRITE_INVALID_TAG,
-    .oam = &gDummyOamData, 
-    .anims = gDummySpriteAnimTable, 
-    .images = NULL, 
-    .affineAnims = gDummySpriteAffineAnimTable, 
+    .oam = &gDummyOamData,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = ObjectCB_CameraObject
 };
 
@@ -1329,14 +1329,14 @@ static u8 InitObjectEventStateFromTemplate(struct ObjectEventTemplate *template,
     s16 y2;
     s16 x3;
     s16 y3;
-    
+
     var0 = 0;
     elevation = 0;
     x2 = 0;
     y2 = 0;
     x3 = 0;
     y3 = 0;
-    
+
     if (template->inConnection == 0xFF)
     {
         var0 = 1;
@@ -1411,7 +1411,7 @@ static bool8 sub_805E238(struct ObjectEventTemplate *template, u8 var, s16 x, s1
     }
     if (!sub_805E2E8(template, x, y))
         return FALSE;
-    
+
     return TRUE;
 }
 
@@ -1428,7 +1428,7 @@ static bool8 sub_805E27C(struct ObjectEventTemplate *template, s16 x, s16 y)
         if (gSaveBlock1Ptr->pos.y - 6 <= y && gSaveBlock1Ptr->pos.y + 6 >= y)
             return FALSE;
     }
-    else 
+    else
     {
         if (gSaveBlock1Ptr->pos.x - 8 > x)
             return TRUE;
@@ -1443,16 +1443,16 @@ static bool8 sub_805E27C(struct ObjectEventTemplate *template, s16 x, s16 y)
 static bool8 sub_805E2E8(struct ObjectEventTemplate *template, s16 x, s16 y)
 {
     s32 x2, y2;
-    
+
     if (!IsMapTypeOutdoors(GetCurrentMapType()))
         return TRUE;
-    
+
     x2 = VMap.Xsize - 16;
     y2 = VMap.Ysize - 15;
-    
+
     if ((u8)(template->graphicsId - OBJ_EVENT_GFX_CUT_TREE) > 1)
         return TRUE;
-    
+
     if (!gSaveBlock1Ptr->pos.x)
     {
         if (template->x <= 8)
@@ -1461,7 +1461,7 @@ static bool8 sub_805E2E8(struct ObjectEventTemplate *template, s16 x, s16 y)
             return FALSE;
         }
     }
-    
+
     if (gSaveBlock1Ptr->pos.x == x2)
     {
         if (template->x >= x2 - 8)
@@ -1470,7 +1470,7 @@ static bool8 sub_805E2E8(struct ObjectEventTemplate *template, s16 x, s16 y)
             return FALSE;
         }
     }
-    
+
     if (!gSaveBlock1Ptr->pos.y)
     {
         if (template->y <= 6)
@@ -1479,7 +1479,7 @@ static bool8 sub_805E2E8(struct ObjectEventTemplate *template, s16 x, s16 y)
             return FALSE;
         }
     }
-    
+
     if (gSaveBlock1Ptr->pos.y == y2)
     {
         if (template->y >= y2 - 6)
@@ -1488,7 +1488,7 @@ static bool8 sub_805E2E8(struct ObjectEventTemplate *template, s16 x, s16 y)
             return FALSE;
         }
     }
-    
+
     return TRUE;
 }
 
@@ -1508,7 +1508,7 @@ u8 Unref_TryInitLocalObjectEvent(u8 localId)
         return OBJECT_EVENTS_COUNT;
 
     objectEventCount = gMapHeader.events->objectEventCount;
-    
+
     for (i = 0; i < objectEventCount; i++)
     {
         template = &gSaveBlock1Ptr->objectEventTemplates[i];
@@ -1710,7 +1710,7 @@ void MakeObjectTemplateFromObjectEventGraphicsInfo(u16 graphicsId, void (*callba
     spriteTemplate->anims = graphicsInfo->anims;
     spriteTemplate->images = graphicsInfo->images;
     spriteTemplate->affineAnims = graphicsInfo->affineAnims;
-    
+
     do
     {
         if (ScriptContext1_IsScriptSetUp() != TRUE && sub_8112CAC() == TRUE)
@@ -1718,7 +1718,7 @@ void MakeObjectTemplateFromObjectEventGraphicsInfo(u16 graphicsId, void (*callba
         else
             spriteTemplate->callback = callback;
     } while (0);
-    
+
     *subspriteTables = graphicsInfo->subspriteTables;
 }
 
@@ -2016,7 +2016,7 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u8 graphicsId)
     {
         LoadSpecialObjectReflectionPalette(graphicsInfo->paletteTag, graphicsInfo->paletteSlot);
     }
-    
+
     var = sprite->images->size / TILE_SIZE_4BPP;
     if (!sprite->usingSheet)
     {
@@ -2035,12 +2035,12 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u8 graphicsId)
         var2 = AllocSpriteTiles(var3);
         if (var2 == -1)
         {
-            var2 = AllocSpriteTiles(var);    
+            var2 = AllocSpriteTiles(var);
         }
         sprite->oam.tileNum = var2;
     }
     objectEvent->inanimate = graphicsInfo->inanimate;
-    objectEvent->graphicsId = graphicsId;  
+    objectEvent->graphicsId = graphicsId;
     SetSpritePosToMapCoords(objectEvent->currentCoords.x, objectEvent->currentCoords.y, &sprite->x, &sprite->y);
     sprite->centerToCornerVecX = -(graphicsInfo->width >> 1);
     sprite->centerToCornerVecY = -(graphicsInfo->height >> 1);
@@ -2091,10 +2091,10 @@ const struct ObjectEventGraphicsInfo *GetObjectEventGraphicsInfo(u8 graphicsId)
 {
     if (graphicsId >= OBJ_EVENT_GFX_VARS)
         graphicsId = VarGetObjectEventGraphicsId(graphicsId - OBJ_EVENT_GFX_VARS);
-    
+
     if (graphicsId >= NUM_OBJ_EVENT_GFX)
         graphicsId = OBJ_EVENT_GFX_LITTLE_BOY;
-    
+
     return gObjectEventGraphicsInfoPointers[graphicsId];
 }
 
@@ -5185,7 +5185,7 @@ void sub_8063E28(struct ObjectEvent *objectEvent, struct Sprite *sprite)
         if(!sprite->animBeginning)
             sub_8064544(objectEvent, sprite);
     }
-    
+
     if (MetatileBehavior_IsIce_2(objectEvent->currentMetatileBehavior) == TRUE
      || MetatileBehavior_IsUnknownMovement48(objectEvent->currentMetatileBehavior) == TRUE)
         objectEvent->disableAnim = TRUE;
@@ -5321,7 +5321,7 @@ static void ObjectEventSetSingleMovement(struct ObjectEvent *objectEvent, struct
 {
     objectEvent->movementActionId = animId;
     sprite->data[2] = 0;
-    
+
     if (gQuestLogPlaybackState == 2)
     {
         QuestLogRecordNPCStep(objectEvent->localId, objectEvent->mapNum, objectEvent->mapGroup, animId);
@@ -6053,7 +6053,7 @@ u8 MovementActionFunc_xA0_0(struct ObjectEvent *objectEvent, struct Sprite *spri
 {
     if(objectEvent->facingDirection != DIR_SOUTH)
         StartSpriteAnim(sprite, GetFaceDirectionAnimNum(DIR_SOUTH));
-    
+
     InitNpcForMovement(objectEvent, sprite, DIR_SOUTH, 1);
     return MovementActionFunc_xA0_1(objectEvent, sprite);
 }
@@ -6073,7 +6073,7 @@ u8 MovementActionFunc_xA1_0(struct ObjectEvent *objectEvent, struct Sprite *spri
 {
     if(objectEvent->facingDirection != DIR_NORTH)
         StartSpriteAnim(sprite, GetFaceDirectionAnimNum(DIR_NORTH));
-    
+
     InitNpcForMovement(objectEvent, sprite, DIR_NORTH, 1);
     return MovementActionFunc_xA1_1(objectEvent, sprite);
 }
@@ -6093,7 +6093,7 @@ u8 MovementActionFunc_xA2_0(struct ObjectEvent *objectEvent, struct Sprite *spri
 {
     if(objectEvent->facingDirection != DIR_WEST)
         StartSpriteAnim(sprite, GetFaceDirectionAnimNum(DIR_WEST));
-    
+
     InitNpcForMovement(objectEvent, sprite, DIR_WEST, 1);
     return MovementActionFunc_xA2_1(objectEvent, sprite);
 }
@@ -6113,7 +6113,7 @@ u8 MovementActionFunc_xA3_0(struct ObjectEvent *objectEvent, struct Sprite *spri
 {
     if(objectEvent->facingDirection != DIR_EAST)
         StartSpriteAnim(sprite, GetFaceDirectionAnimNum(DIR_EAST));
-    
+
     InitNpcForMovement(objectEvent, sprite, DIR_EAST, 1);
     return MovementActionFunc_xA3_1(objectEvent, sprite);
 }
@@ -6141,7 +6141,7 @@ u8 MovementActionFunc_x04_0(struct ObjectEvent *objectEvent, struct Sprite *spri
 {
     if(objectEvent->facingDirection != DIR_SOUTH)
         StartSpriteAnim(sprite, GetFaceDirectionAnimNum(DIR_SOUTH));
-    
+
     AnimateSprite(sprite);
     sub_80655A8(objectEvent, sprite, DIR_SOUTH);
     return TRUE;
@@ -6151,7 +6151,7 @@ u8 MovementActionFunc_x05_0(struct ObjectEvent *objectEvent, struct Sprite *spri
 {
     if(objectEvent->facingDirection != DIR_NORTH)
         StartSpriteAnim(sprite, GetFaceDirectionAnimNum(DIR_NORTH));
-    
+
     AnimateSprite(sprite);
     sub_80655A8(objectEvent, sprite, DIR_NORTH);
     return TRUE;
@@ -6161,7 +6161,7 @@ u8 MovementActionFunc_x06_0(struct ObjectEvent *objectEvent, struct Sprite *spri
 {
     if(objectEvent->facingDirection != DIR_WEST)
         StartSpriteAnim(sprite, GetFaceDirectionAnimNum(DIR_WEST));
-    
+
     AnimateSprite(sprite);
     sub_80655A8(objectEvent, sprite, DIR_WEST);
     return TRUE;
@@ -6171,7 +6171,7 @@ u8 MovementActionFunc_x07_0(struct ObjectEvent *objectEvent, struct Sprite *spri
 {
     if(objectEvent->facingDirection != DIR_EAST)
         StartSpriteAnim(sprite, GetFaceDirectionAnimNum(DIR_EAST));
-    
+
     AnimateSprite(sprite);
     sub_80655A8(objectEvent, sprite, DIR_EAST);
     return TRUE;
@@ -8037,7 +8037,7 @@ static void CalcWhetherObjectIsOffscreen(struct ObjectEvent *objectEvent, struct
     }
     x2 = graphicsInfo->width + (s16)x;
     y2 = graphicsInfo->height + (s16)y;
-    
+
     if (gSaveBlock1Ptr->location.mapGroup == 1 && gSaveBlock1Ptr->location.mapNum == 4 && objectEvent->localId == 1)
     {
         var = -32;

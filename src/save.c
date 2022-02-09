@@ -713,7 +713,7 @@ u8 SaveGame_AfterLinkTrade(void)
     return 0;
 }
 
-bool8 AfterLinkTradeSaveFailed(void) 
+bool8 AfterLinkTradeSaveFailed(void)
 {
     u8 retVal = sub_80D9AA4(0xE, gRamSaveSectionLocations);
     if (gDamagedSaveSectors)

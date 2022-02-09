@@ -2051,10 +2051,10 @@ bool8 UseRegisteredKeyItemOnField(void)
 static bool8 BagIsTutorial(void)
 {
     if (
-        gBagMenuState.location == ITEMMENULOCATION_OLD_MAN 
-     || gBagMenuState.location == ITEMMENULOCATION_TTVSCR_CATCHING 
-     || gBagMenuState.location == ITEMMENULOCATION_TTVSCR_STATUS 
-     || gBagMenuState.location == ITEMMENULOCATION_TTVSCR_REGISTER 
+        gBagMenuState.location == ITEMMENULOCATION_OLD_MAN
+     || gBagMenuState.location == ITEMMENULOCATION_TTVSCR_CATCHING
+     || gBagMenuState.location == ITEMMENULOCATION_TTVSCR_STATUS
+     || gBagMenuState.location == ITEMMENULOCATION_TTVSCR_REGISTER
      || gBagMenuState.location == ITEMMENULOCATION_TTVSCR_TMS
     )
         return TRUE;

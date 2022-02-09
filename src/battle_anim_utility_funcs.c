@@ -53,7 +53,7 @@ const u8 gBattleIntroRegOffsBgCnt[] = { REG_OFFSET_BG0CNT, REG_OFFSET_BG1CNT, RE
 void AnimTask_BlendSelected(u8 taskId)
 {
     u32 selectedPalettes = UnpackSelectedBattleAnimPalettes(gBattleAnimArgs[0]);
-    
+
     selectedPalettes |= SelectBattlerSpritePalettes(
         (gBattleAnimArgs[0] >>  7) & 1,
         (gBattleAnimArgs[0] >>  8) & 1,
@@ -112,7 +112,7 @@ void AnimTask_BlendExcept(u8 taskId)
     }
     for (battler = 0; battler < MAX_BATTLERS_COUNT; ++battler)
     {
-        if (battler != animBattlers[0] 
+        if (battler != animBattlers[0]
          && battler != animBattlers[1]
          && IsBattlerSpriteVisible(battler))
             selectedPalettes |= 0x10000 << GetSpritePalIdxByBattler(battler);
@@ -123,7 +123,7 @@ void AnimTask_BlendExcept(u8 taskId)
 void AnimTask_SetCamouflageBlend(u8 taskId)
 {
     u32 selectedPalettes = UnpackSelectedBattleAnimPalettes(gBattleAnimArgs[0]);
-    
+
     switch (gBattleTerrain)
     {
     case BATTLE_TERRAIN_GRASS:

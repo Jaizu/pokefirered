@@ -1050,7 +1050,7 @@ void AnimTask_VoltTackleBolt(u8 taskId)
 static bool8 sub_80AEB98(struct Task *task, u8 taskId)
 {
     u8 spriteId = CreateSprite(&gVoltTackleBoltSpriteTemplate, task->data[3], task->data[5], 35);
-    
+
     if (spriteId != MAX_SPRITES)
     {
         gSprites[spriteId].data[6] = taskId;
@@ -1248,7 +1248,7 @@ void AnimTask_ShockWaveLightning(u8 taskId)
 static bool8 sub_80AF058(struct Task *task, u8 taskId)
 {
     u8 spriteId = CreateSprite(&gLightningSpriteTemplate, task->data[13], task->data[14], task->data[12]);
-    
+
     if (spriteId != MAX_SPRITES)
     {
         gSprites[spriteId].callback = sub_80AF0C8;

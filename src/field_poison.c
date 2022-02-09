@@ -93,7 +93,7 @@ s32 DoPoisonFieldEffect(void)
 {
     int i;
     u32 hp;
-    
+
     struct Pokemon *pokemon = gPlayerParty;
     u32 numPoisoned = 0;
     u32 numFainted = 0;

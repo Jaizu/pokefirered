@@ -1793,7 +1793,7 @@ void ClearBattleAnimationVars(void)
     gAnimMoveDmg = 0;
     gAnimMovePower = 0;
     gAnimFriendship = 0;
-    
+
     // Clear index array.
     for (i = 0; i < ANIM_SPRITE_INDEX_COUNT; i++)
         sAnimSpriteIndexArray[i] |= 0xFFFF;
@@ -2170,7 +2170,7 @@ static void ScriptCmd_monbg(void)
         battlerId = gBattleAnimAttacker;
     else
         battlerId = gBattleAnimTarget;
-    
+
     if (IsBattlerSpriteVisible(battlerId))
     {
         position = GetBattlerPosition(battlerId);
@@ -2238,7 +2238,7 @@ static void ScriptCmd_monbg(void)
 bool8 IsBattlerSpriteVisible(u8 battlerId)
 {
     u8 battler = battlerId;
-    
+
     if (!IsBattlerSpritePresent(battler))
         return FALSE;
 
@@ -2418,7 +2418,7 @@ static void sub_807331C(u8 taskId)
 {
     u8 toBG_2;
     u8 position;
-    
+
     gTasks[taskId].data[1]++;
     if (gTasks[taskId].data[1] != 1)
     {
@@ -2470,7 +2470,7 @@ static void ScriptCmd_monbg_22(void)
             toBG_2 = FALSE;
         else
             toBG_2 = TRUE;
-        
+
         MoveBattlerSpriteToBG(battlerId, toBG_2);
         gSprites[gBattlerSpriteIds[battlerId]].invisible = FALSE;
     }
@@ -2529,7 +2529,7 @@ static void sub_8073558(u8 taskId)
     bool8 to_BG2;
     u8 position;
     u8 battlerId;
-    
+
     gTasks[taskId].data[1]++;
     if (gTasks[taskId].data[1] != 1)
     {
@@ -2543,7 +2543,7 @@ static void sub_8073558(u8 taskId)
 
         if (IsBattlerSpriteVisible(battlerId))
             ResetBattleAnimBg(toBG_2);
-        
+
         if (gTasks[taskId].data[0] > 1 && IsBattlerSpriteVisible(battlerId ^ BIT_FLANK))
             ResetBattleAnimBg(toBG_2 ^ 1);
 
@@ -2625,7 +2625,7 @@ static void ScriptCmd_choosetwoturnanim(void)
 static void ScriptCmd_jumpifmoveturn(void)
 {
     u8 toCheck;
-    
+
     sBattleAnimScriptPtr++;
     toCheck = sBattleAnimScriptPtr[0];
     sBattleAnimScriptPtr++;

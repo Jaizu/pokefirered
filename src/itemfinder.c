@@ -257,7 +257,7 @@ static void SetNormalHiddenItem(u8 taskId)
     s16 *data = gTasks[taskId].data;
     s16 absY = tItemY;
     s16 absX = tItemX;
-    
+
     // The strength of the response increases inversely with distance to the item.
     if (tItemX == 0 && tItemY == 0)
         tNumDingsRemaining = 4;

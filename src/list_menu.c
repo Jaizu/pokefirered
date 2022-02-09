@@ -156,7 +156,7 @@ u8 ListMenuInitInRect(const struct ListMenuTemplate *listMenuTemplate, const str
 {
     s32 i;
     u8 taskId = ListMenuInitInternal(listMenuTemplate, cursorPos, itemsAbove);
-    
+
     for (i = 0; rect[i].palNum != 0xFF; i++)
         PutWindowRectTilemapOverridePalette(listMenuTemplate->windowId, rect[i].x, rect[i].y, rect[i].width, rect[i].height, rect[i].palNum);
     CopyWindowToVram(listMenuTemplate->windowId, COPYWIN_GFX);
@@ -383,7 +383,7 @@ static void ListMenuDrawCursor(struct ListMenu *list)
     u8 yMultiplier = GetFontAttribute(list->template.fontId, FONTATTR_MAX_LETTER_HEIGHT) + list->template.itemVerticalPadding;
     u8 x = list->template.cursor_X;
     u8 y = list->itemsAbove * yMultiplier + list->template.upText_Y;
-    
+
     switch (list->template.cursorKind)
     {
     case 0:
@@ -568,7 +568,7 @@ static bool8 ListMenuChangeSelection(struct ListMenu *list, bool8 updateCursorAn
         do
         {
             u8 ret = ListMenuUpdateSelectedRowIndexAndScrollOffset(list, movingDown);
-            
+
             selectionChange |= ret;
             if (ret != 2)
                 break;

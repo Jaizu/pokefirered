@@ -475,7 +475,7 @@ const struct SpriteTemplate gWeatherBallWaterDownSpriteTemplate =
     .callback = AnimWeatherBallDown,
 };
 
-void AnimTask_CreateRaindrops(u8 taskId) 
+void AnimTask_CreateRaindrops(u8 taskId)
 {
      u8 x, y;
 
@@ -496,12 +496,12 @@ void AnimTask_CreateRaindrops(u8 taskId)
         DestroyAnimVisualTask(taskId);
 }
 
-static void AnimRainDrop(struct Sprite *sprite) 
+static void AnimRainDrop(struct Sprite *sprite)
 {
     sprite->callback = AnimRainDrop_Step;
 }
 
-static void AnimRainDrop_Step(struct Sprite *sprite) 
+static void AnimRainDrop_Step(struct Sprite *sprite)
 {
     if (++sprite->data[0] < 14) // Was 13 in emerald
     {

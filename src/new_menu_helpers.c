@@ -26,7 +26,7 @@ const u16 gTMCaseMainWindowPalette[] = INCBIN_U16("graphics/tm_case/unk_841F408.
 
 static const u8 gUnknown_841F428[] = { 8, 4, 1 };
 
-static const struct WindowTemplate sStandardTextBox_WindowTemplates[] = 
+static const struct WindowTemplate sStandardTextBox_WindowTemplates[] =
 {
     {
         .bg = 0,
@@ -40,7 +40,7 @@ static const struct WindowTemplate sStandardTextBox_WindowTemplates[] =
     DUMMY_WIN_TEMPLATE
 };
 
-static const struct WindowTemplate sYesNo_WindowTemplate = 
+static const struct WindowTemplate sYesNo_WindowTemplate =
 {
     .bg = 0,
     .tilemapLeft = 0x15,
@@ -51,7 +51,7 @@ static const struct WindowTemplate sYesNo_WindowTemplate =
     .baseBlock = 0x125,
 };
 
-static const struct FontInfo gFontInfos[] = 
+static const struct FontInfo gFontInfos[] =
 {
     {
         .fontFunction = Font0Func,
@@ -143,7 +143,7 @@ static const struct FontInfo gFontInfos[] =
     }
 };
 
-static const u8 gMenuCursorDimensions[][2] = 
+static const u8 gMenuCursorDimensions[][2] =
 {
     { 0x8,  0xD },
     { 0x8,  0xE },
@@ -329,7 +329,7 @@ static u16 CopyDecompressedTileDataToVram(u8 bgId, const void *src, u16 size, u1
     {
     case 1:
         break;
-    case 0:        
+    case 0:
     default:
         return LoadBgTiles(bgId, src, size, offset);
     }
@@ -428,7 +428,7 @@ void AddTextPrinterDiffStyle(bool8 allowSkippingDelayWithButtonPress)
     u8 result;
     void *nptr = NULL;
 
-    gTextFlags.canABSpeedUpPrint = allowSkippingDelayWithButtonPress;    
+    gTextFlags.canABSpeedUpPrint = allowSkippingDelayWithButtonPress;
     result = ContextNpcGetTextColor();
     if (result == 0)
         AddTextPrinterParameterized2(0, 4, gStringVar4, GetTextSpeedSetting(), nptr, 8, 1, 3);

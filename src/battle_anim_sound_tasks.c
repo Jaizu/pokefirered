@@ -131,7 +131,7 @@ void SoundTask_PlayCryHighPitch(u8 taskId)
     else
         battlerId = BATTLE_PARTNER(gBattleAnimTarget);
     // Check if battler is visible.
-    if ((gBattleAnimArgs[0] == ANIM_TARGET || gBattleAnimArgs[0] == ANIM_DEF_PARTNER) 
+    if ((gBattleAnimArgs[0] == ANIM_TARGET || gBattleAnimArgs[0] == ANIM_DEF_PARTNER)
      && !IsBattlerSpriteVisible(battlerId))
     {
         DestroyAnimVisualTask(taskId);
@@ -151,7 +151,7 @@ void SoundTask_PlayDoubleCry(u8 taskId)
     u16 species = SPECIES_NONE;
     u8 battlerId;
     s8 pan = BattleAnimAdjustPanning(SOUND_PAN_ATTACKER);
-        
+
     // Get wanted battler.
     if (gBattleAnimArgs[0] == ANIM_ATTACKER)
         battlerId = gBattleAnimAttacker;
@@ -162,7 +162,7 @@ void SoundTask_PlayDoubleCry(u8 taskId)
     else
         battlerId = BATTLE_PARTNER(gBattleAnimTarget);
     // Check if battler is visible.
-    if ((gBattleAnimArgs[0] == ANIM_TARGET || gBattleAnimArgs[0] == ANIM_DEF_PARTNER) 
+    if ((gBattleAnimArgs[0] == ANIM_TARGET || gBattleAnimArgs[0] == ANIM_DEF_PARTNER)
      && !IsBattlerSpriteVisible(battlerId))
     {
         DestroyAnimVisualTask(taskId);
@@ -252,7 +252,7 @@ static void sub_80DD390(u8 taskId)
     {
         u16 species = gTasks[taskId].data[1];
         s8 pan = gTasks[taskId].data[2];
-        
+
         PlayCry3(species, pan, 6);
         DestroyAnimVisualTask(taskId);
     }
@@ -303,7 +303,7 @@ static void sub_80DD4D4(u8 taskId)
     {
         gTasks[taskId].data[10] = 0;
         oldPan = gTasks[taskId].data[11];
-        gTasks[taskId].data[11] = panIncrement + oldPan; 
+        gTasks[taskId].data[11] = panIncrement + oldPan;
         gTasks[taskId].data[11] = KeepPanInRange(gTasks[taskId].data[11], oldPan);
     }
     gUnknown_2037F24 = gTasks[taskId].data[11];

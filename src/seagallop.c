@@ -474,23 +474,23 @@ u8 GetSeagallopNumber(void)
     if (originId == SEAGALLOP_BIRTH_ISLAND || destId == SEAGALLOP_BIRTH_ISLAND)
         return 12;
 
-    if ((originId == SEAGALLOP_ONE_ISLAND 
-      || originId == SEAGALLOP_TWO_ISLAND 
-      || originId == SEAGALLOP_THREE_ISLAND) 
-      && (destId == SEAGALLOP_ONE_ISLAND 
-       || destId == SEAGALLOP_TWO_ISLAND 
+    if ((originId == SEAGALLOP_ONE_ISLAND
+      || originId == SEAGALLOP_TWO_ISLAND
+      || originId == SEAGALLOP_THREE_ISLAND)
+      && (destId == SEAGALLOP_ONE_ISLAND
+       || destId == SEAGALLOP_TWO_ISLAND
        || destId == SEAGALLOP_THREE_ISLAND))
         return 2;
 
-    if ((originId == SEAGALLOP_FOUR_ISLAND 
-      || originId == SEAGALLOP_FIVE_ISLAND) 
-      && (destId == SEAGALLOP_FOUR_ISLAND 
+    if ((originId == SEAGALLOP_FOUR_ISLAND
+      || originId == SEAGALLOP_FIVE_ISLAND)
+      && (destId == SEAGALLOP_FOUR_ISLAND
        || destId == SEAGALLOP_FIVE_ISLAND))
         return 3;
 
-    if ((originId == SEAGALLOP_SIX_ISLAND 
-      || originId == SEAGALLOP_SEVEN_ISLAND) 
-      && (destId == SEAGALLOP_SIX_ISLAND 
+    if ((originId == SEAGALLOP_SIX_ISLAND
+      || originId == SEAGALLOP_SEVEN_ISLAND)
+      && (destId == SEAGALLOP_SIX_ISLAND
        || destId == SEAGALLOP_SEVEN_ISLAND))
         return 5;
 
@@ -499,8 +499,8 @@ u8 GetSeagallopNumber(void)
 
 bool8 IsPlayerLeftOfVermilionSailor(void)
 {
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(VERMILION_CITY) 
-       && gSaveBlock1Ptr->location.mapNum == MAP_NUM(VERMILION_CITY) 
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(VERMILION_CITY)
+       && gSaveBlock1Ptr->location.mapNum == MAP_NUM(VERMILION_CITY)
        && gSaveBlock1Ptr->pos.x < 24)
         return TRUE;
 

@@ -227,7 +227,7 @@ static const struct MessageWindowInfo sMessageWindowInfo[] = {
         .x = 0,
         .y = 0,
         .letterSpacing = 1,
-        .lineSpacing = 2, 
+        .lineSpacing = 2,
         .expandPlaceholders = FALSE,
         .widerBox = FALSE
     },
@@ -237,7 +237,7 @@ static const struct MessageWindowInfo sMessageWindowInfo[] = {
         .x = 0,
         .y = 0,
         .letterSpacing = 1,
-        .lineSpacing = 2, 
+        .lineSpacing = 2,
         .expandPlaceholders = FALSE,
         .widerBox = FALSE
     },
@@ -247,7 +247,7 @@ static const struct MessageWindowInfo sMessageWindowInfo[] = {
         .x = 0,
         .y = 0,
         .letterSpacing = 1,
-        .lineSpacing = 2, 
+        .lineSpacing = 2,
         .expandPlaceholders = FALSE,
         .widerBox = FALSE
     },
@@ -257,7 +257,7 @@ static const struct MessageWindowInfo sMessageWindowInfo[] = {
         .x = 0,
         .y = 0,
         .letterSpacing = 1,
-        .lineSpacing = 2, 
+        .lineSpacing = 2,
         .expandPlaceholders = FALSE,
         .widerBox = FALSE
     },
@@ -267,7 +267,7 @@ static const struct MessageWindowInfo sMessageWindowInfo[] = {
         .x = 0,
         .y = 0,
         .letterSpacing = 1,
-        .lineSpacing = 2, 
+        .lineSpacing = 2,
         .expandPlaceholders = FALSE,
         .widerBox = FALSE
     },
@@ -277,7 +277,7 @@ static const struct MessageWindowInfo sMessageWindowInfo[] = {
         .x = 0,
         .y = 0,
         .letterSpacing = 0,
-        .lineSpacing = 2, 
+        .lineSpacing = 2,
         .expandPlaceholders = TRUE,
         .widerBox = FALSE
     },
@@ -287,7 +287,7 @@ static const struct MessageWindowInfo sMessageWindowInfo[] = {
         .x = 0,
         .y = 0,
         .letterSpacing = 1,
-        .lineSpacing = 2, 
+        .lineSpacing = 2,
         .expandPlaceholders = FALSE,
         .widerBox = TRUE
     },
@@ -297,7 +297,7 @@ static const struct MessageWindowInfo sMessageWindowInfo[] = {
         .x = 0,
         .y = 0,
         .letterSpacing = 1,
-        .lineSpacing = 2, 
+        .lineSpacing = 2,
         .expandPlaceholders = FALSE,
         .widerBox = TRUE
     },
@@ -307,7 +307,7 @@ static const struct MessageWindowInfo sMessageWindowInfo[] = {
         .x = 0,
         .y = 0,
         .letterSpacing = 1,
-        .lineSpacing = 2, 
+        .lineSpacing = 2,
         .expandPlaceholders = FALSE,
         .widerBox = TRUE
     },
@@ -317,7 +317,7 @@ static const struct MessageWindowInfo sMessageWindowInfo[] = {
         .x = 0,
         .y = 0,
         .letterSpacing = 1,
-        .lineSpacing = 2, 
+        .lineSpacing = 2,
         .expandPlaceholders = TRUE,
         .widerBox = TRUE
     },
@@ -327,7 +327,7 @@ static const struct MessageWindowInfo sMessageWindowInfo[] = {
         .x = 0,
         .y = 0,
         .letterSpacing = 1,
-        .lineSpacing = 2, 
+        .lineSpacing = 2,
         .expandPlaceholders = FALSE,
         .widerBox = TRUE
     }
